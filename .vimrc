@@ -221,6 +221,14 @@
     " nmap j gj
     " nmap k gk
 
+    " Custom map
+    nmap <leader>r :
+    nmap econf :e ~/.vimrc<CR>
+    nmap vconf :vsplit ~/.vimrc<CR>
+
+    " Git
+    nmap gs :! git status<CR>
+    nmap ga :! git add .<CR>
 
     "Leader configuration
     let mapleader = ","
@@ -229,10 +237,16 @@
     " window management
     nmap <leader>s <C-w>s<C-w>j
     nmap <leader>v <C-w>v<C-w>l
+    nmap <leader>w <C-w>
+    nmap <leader>c :close<CR>
 
     " buffer cycling
     nmap <C-j> :bn<cr>
     nmap <C-k> :bp<cr>
+    nmap <leader>bf :bn<cr>
+    nmap <leader>bb :bp<cr>
+    nmap <leader>bl :ls<cr>
+    nmap <leader>bd :bd<cr>
 
     "Shortcut to paste from outside vim
     nmap <leader>p "+p<CR>

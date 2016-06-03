@@ -1,17 +1,36 @@
 # Install:
 
+###KEYMAP
+  - , `<leader>`
+  - `<leader>` + r -> :
+  - `<leader>` + s -> splits screen horizontally
+  - `<leader>` + v -> splits screen vertically
+  - `<leader>` + w -> `<C-w>` changes window if j-k
+  - `<leader>` + c -> close window
+  - `<leader>` + bf -> buffer front
+  - `<leader>` + bb -> buffer back
+  - `<leader>` + bl -> buffer list
+  - `<leader>` + bd -> buffer delete
+
+###MACROS
+  - econf -> edits ~/.vimrc
+  - vconf -> edits ~/.vimrc in slpit screen
+
+###GIT MACROS
+  - gs -> git status
+  - ga -> git add .
 
 Check install.sh for details about installation. 
 
 ## wget
-	wget -qO- https://raw.github.com/iknite/.vim/master/install.sh | sh
+	wget -qO- https://raw.github.com/PRDeving/.vim/master/install.sh | sh
 	#enjoy
 
 ## curl
-	curl https://raw.github.com/iknite/.vim/master/install.sh | sh
+	curl https://raw.github.com/PRDeving/.vim/master/install.sh | sh
 	#enjoy
 
 ----
-iknite @ 2014
-v0.1.7
+PRDeving 2016, forked from [iknite](1) @ 2014 v0.1.7
 
+[1][https://github.com/iknite/.vim]
