@@ -31,6 +31,6 @@ Check install.sh for details about installation.
 	#enjoy
 
 ----
-PRDeving 2016, forked from [iknite](1) @ 2014 v0.1.7
+PRDeving 2016, forked from [iknite][1] @ 2014 v0.1.7
 
-[1][https://github.com/iknite/.vim]
+[1]:https://github.com/iknite/.vim
