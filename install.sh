@@ -26,7 +26,7 @@ esac
 
 echo "Installing vim config"
 rm -rf ~/.vim ~/.vimrc /.gvimrc
-cd && git clone https://github.com/iknite/.vim.git
+cd && git clone https://github.com/PRDeving/.vim.git
 
 ln -s ~/.vim/.vimrc ~/.vimrc
 
@@ -38,4 +38,4 @@ cd ~/.vim/bundle/command-t/ruby/command-t/ &&
     ruby extconf.rb &&
     make
 
-echo "**DONE** Did you found the Treasure of Mêlée Island™?"
+echo "Successfully installed"
