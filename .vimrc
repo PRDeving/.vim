@@ -95,7 +95,7 @@
     set autoindent                    " Indenting options
     set smartindent
     set ruler                         " show the cursor position all the time
-    set ts=4 sts=4 sw=4 expandtab     " Default tab flavour
+    set ts=2 sts=2 sw=2 expandtab     " Default tab flavour
     set smarttab
     set laststatus=2                  " Allways show status in bar
     set nowrap
