@@ -13,6 +13,12 @@
     call vundle#rc()
     Bundle 'gmarik/vundle'
 
+    Bundle 'scrooloose/nerdtree'
+    nmap tt :NERDTreeToggle<CR>
+    map tt :NERDTreeToggle<CR>
+    nmap tf :NERDTreeFocus<CR>
+    map tf :NERDTreeFocus<CR>
+
     Bundle 'Lokaltog/vim-easymotion'
     " Bundle 'Shougo/neocomplete.vim'
     " Bundle 'akracun/vitality.vim'
