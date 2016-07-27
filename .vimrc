@@ -79,8 +79,8 @@
     Bundle 'Shougo/vimfiler.vim'
     let g:vimfiler_as_defaut_explorer = 1
 
-    call vimfiler#custom#profile('default', 'context', { 'safe' : 0 })
-    map - :VimFiler<cr>
+    """call vimfiler#custom#profile('default', 'context', { 'safe' : 0 })
+    """map - :VimFiler<cr>
 
 
     filetype plugin indent on         " EOF Bundle conf
