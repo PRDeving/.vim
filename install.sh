@@ -30,12 +30,11 @@ cd && git clone https://github.com/PRDeving/.vim.git
 
 ln -s ~/.vim/.vimrc ~/.vimrc
 
+git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
+~/.fzf/install
+
 cd ~/.vim && 
     git submodule update --init --recursive &&
     vim +BundleInstall +qall
-
-cd ~/.vim/bundle/command-t/ruby/command-t/ &&
-    ruby extconf.rb &&
-    make
 
 echo "Successfully installed"

@@ -1,5 +1,6 @@
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" @copyright: Enrique Paredes
+" @original: Enrique Paredes
+" tweaked: PRDeving
 " @licensing:
     "    <MIT License>http://www.opensource.org/licenses/mit-license.php
     "
@@ -19,24 +20,29 @@
     nmap tf :NERDTreeFocus<CR>
     map tf :NERDTreeFocus<CR>
 
-    Bundle 'Lokaltog/vim-easymotion'
-    " Bundle 'Shougo/neocomplete.vim'
-    " Bundle 'akracun/vitality.vim'
-    Bundle 'burnettk/vim-angular'
-    Bundle 'chase/vim-ansible-yaml'
-    " Bundle 'davidhalter/jedi-vim'
-    Bundle 'fatih/vim-go'
-    Bundle 'joeytwiddle/vim-multiple-cursors'
-    Bundle 'mattn/emmet-vim'
+    Bundle 'rking/ag.vim'
 
     Bundle 'majutsushi/tagbar'
-    map <leader>m :TagbarToggle<CR>
+    map mm :TagbarToggle<CR>
 
-    " Bundle 'moll/vim-bbye'
-    Bundle 'rking/ag.vim'
+    Bundle 'mattn/emmet-vim'
+    " <C-Y>
+
+    Bundle 'joeytwiddle/vim-multiple-cursors'
+    " <C-n>
+
+    " Git
+    Bundle 'tpope/vim-fugitive'
+    "Gdiff, Gstatus, Gcommit, Gmove...
+
     Bundle 'sheerun/vim-polyglot'
     Bundle 'tomtom/tcomment_vim'
-    Bundle 'tpope/vim-fugitive'
+
+    " Bundle 'Shougo/neocomplete.vim'
+    " compilar con lua en algun momento...
+
+
+
     Bundle 'tpope/vim-repeat'
     Bundle 'tpope/vim-unimpaired'
 
@@ -64,23 +70,32 @@
     endfunction
 
     Bundle 'scrooloose/syntastic'
-    let g:syntastic_check_on_open=0
+    set statusline+=%#warningmsg#
+    set statusline+=%{SyntasticStatuslineFlag()}
+    set statusline+=%*
+    let g:syntastic_always_populate_loc_list = 1
+    let g:syntastic_auto_loc_list = 1
+    let g:syntastic_check_on_open = 1
+    let g:syntastic_check_on_wq = 0
     let g:syntastic_error_symbol = '▸'
     let g:syntastic_warning_symbol='⚠'
     let g:syntastic_style_error_symbol = '§'
     let g:syntastic_style_warning_symbol='~'
 
-    Bundle 'wikitopian/hardmode'
-    map <leader>H :call ToggleHardMode()<CR>
-
     Bundle 'Shougo/unite.vim'
-    map <leader>f :Unite file<cr>
+    map open :Unite file<cr>
 
     Bundle 'Shougo/vimfiler.vim'
     let g:vimfiler_as_defaut_explorer = 1
+    map - :VimFiler<cr>
 
-    """call vimfiler#custom#profile('default', 'context', { 'safe' : 0 })
-    """map - :VimFiler<cr>
+    " https://github.com/junegunn/fzf#installation
+    " git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
+    " ~/.fzf/install
+    set rtp+=~/.fzf
+    Bundle 'junegunn/fzf.vim'
+    nmap ; :Files .<cr>
+    
 
 
     filetype plugin indent on         " EOF Bundle conf
@@ -144,7 +159,14 @@
     set foldlevel=99
 
     " set ofu=syntaxcomplete#Complete     " Onmi Completion options
-    set complete-=i                     " disable onmi to search in current path
+    " set complete-=i                     " disable onmi to search in current path
+    set completeopt=longest,menuone
+    inoremap <expr> <CR> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
+    inoremap <expr> <C-n> pumvisible() ? '<C-n>' :
+          \ '<C-n><C-r>=pumvisible() ? "\<lt>Down>" : ""<CR>'
+
+    inoremap <expr> <M-,> pumvisible() ? '<C-n>' :
+          \ '<C-x><C-o><C-n><C-p><C-r>=pumvisible() ? "\<lt>Down>" : ""<CR>'
 
     set hlsearch                        " Highlight search things
     set wildignore=*.obj,*.exe,*.pyc,*.pyo,*.pyx,*.*~,*.sw*,node_modules,bower_components,coverage,__pycache__
@@ -212,7 +234,7 @@
     ""KEYBOARD MAPS"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
     " enhance sometimes dumb fingers overriding ex commands
-    nnoremap ; :
+    " nnoremap ; :
 
     " Ex mode hurts more times that it's useful
     nnoremap Q <nop>

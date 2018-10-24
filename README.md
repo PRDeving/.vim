@@ -12,6 +12,16 @@
   - `<leader>` + bl -> buffer list
   - `<leader>` + bd -> buffer delete
 
+  - `tt` -> file tree (nerdtree)
+  - `tf` -> focus nerdtree
+  - `mm` -> tagbar
+  - `<C-Y>` -> emmet
+  - `<C-n>` -> multiple selection
+  - `<C-n>` (while writting) -> omnicomplete
+  - `open` -> file tree (unite)
+  - `-` -> filemanager vimfiler
+  - `;` -> live file search from location (fzf)
+
 ###MACROS
   - econf -> edits ~/.vimrc
   - vconf -> edits ~/.vimrc in slpit screen
