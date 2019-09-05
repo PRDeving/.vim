@@ -23,7 +23,7 @@
     Bundle 'rking/ag.vim'
 
     Bundle 'majutsushi/tagbar'
-    map mm :TagbarToggle<CR>
+    map tag :TagbarToggle<CR>
 
     Bundle 'mattn/emmet-vim'
     " <C-Y>
@@ -95,8 +95,15 @@
     set rtp+=~/.fzf
     Bundle 'junegunn/fzf.vim'
     nmap ; :Files .<cr>
-    
 
+
+    Bundle 'MattesGroeger/vim-bookmarks'
+    highlight BookmarkSign ctermbg=NONE ctermfg=160
+    highlight BookmarkLine ctermbg=194 ctermfg=NONE
+    let g:bookmark_sign = '♥'
+    let g:bookmark_highlight_lines = 1
+
+    Bundle 'francoiscabrol/ranger.vim'
 
     filetype plugin indent on         " EOF Bundle conf
     """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -110,7 +117,7 @@
     set autoindent                    " Indenting options
     set smartindent
     set ruler                         " show the cursor position all the time
-    set ts=2 sts=2 sw=2 expandtab     " Default tab flavour
+    set ts=4 sts=4 sw=4 expandtab     " Default tab flavour
     set smarttab
     set laststatus=2                  " Allways show status in bar
     set nowrap
@@ -155,8 +162,9 @@
     set display+=lastline               " 
 
     set foldmethod=indent
-    set foldnestmax=3
-    set foldlevel=99
+    set foldnestmax=10
+    set nofoldenable
+    set foldlevel=1
 
     " set ofu=syntaxcomplete#Complete     " Onmi Completion options
     " set complete-=i                     " disable onmi to search in current path
@@ -248,9 +256,11 @@
     nmap econf :e ~/.vimrc<CR>
     nmap vconf :vsplit ~/.vimrc<CR>
 
+    nmap ct :!ctags -R --options=/home/prdeving/.vim/.ctags --totals=yes .<CR>
+
     " Git
     nmap gs :! git status<CR>
-    nmap ga :! git add .<CR>
+    " nmap ga :! git add .<CR>
 
     "Leader configuration
     let mapleader = ","
